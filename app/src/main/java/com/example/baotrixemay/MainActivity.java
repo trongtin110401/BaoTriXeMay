@@ -9,13 +9,13 @@ import com.example.lib.Repository.Methods;
 import com.example.lib.Repository.RetrofitClient;
 import com.example.lib.model.Loaixe;
 import com.example.lib.model.test;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
