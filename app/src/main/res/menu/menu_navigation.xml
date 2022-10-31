@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-<item android:id="@+id/menu_tab1" android:title="Tab 1 " android:icon="@drawable/ic_user"></item>
-    <item android:id="@+id/menu_tab2" android:title="Tab 2 " android:icon="@drawable/ic_user"></item>
-    <item android:id="@+id/menu_tab3" android:title="Tab 3 " android:icon="@drawable/ic_user"></item>
-    <item android:id="@+id/menu_tab4" android:title="Tab 4 " android:icon="@drawable/ic_user"></item>
-    <item android:id="@+id/menu_tab5" android:title="Tab 5 " android:icon="@drawable/ic_user"></item>
+<item android:id="@+id/menu_tab1" android:title="Trang Chủ" android:icon="@drawable/ic_home" ></item>
+    <item android:id="@+id/menu_tab2" android:title="Xe của tôi" android:icon="@drawable/ic_key"></item>
+    <item android:id="@+id/menu_tab3" android:title="Sản phẩm" android:icon="@drawable/ic_motorcycle"></item>
+    <item android:id="@+id/menu_tab4" android:title="Đại lý" android:icon="@drawable/ic_location"></item>
+    <item android:id="@+id/menu_tab5" android:title="Tin nhắn" android:icon="@drawable/ic_chat"></item>
 
 </menu>

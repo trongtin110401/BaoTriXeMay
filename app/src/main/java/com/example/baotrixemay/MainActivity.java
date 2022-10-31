@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.baotrixemay.fragment.GiaoDienChinh.ChatFragment;
+import com.example.baotrixemay.fragment.GiaoDienChinh.HomeFragment;
 import com.example.baotrixemay.fragment.GiaoDienChinh.ViewpagerApdapter;
 import com.example.lib.Repository.Methods;
 import com.example.lib.Repository.RetrofitClient;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         ViewpagerApdapter viewpagerApdapter = new ViewpagerApdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         mViewPager.setAdapter(viewpagerApdapter);
-
+        mViewPager.setOffscreenPageLimit(5);
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -73,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
                     case R.id.menu_tab1:
                         mViewPager.setCurrentItem(0);
+                        HomeFragment homeFragment = (HomeFragment) mViewPager.getAdapter().instantiateItem(mViewPager,0);
                         break;
                     case R.id.menu_tab2:
                         mViewPager.setCurrentItem(1);
@@ -85,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.menu_tab5:
                         mViewPager.setCurrentItem(4);
+                        ChatFragment chatFragment = (ChatFragment) mViewPager.getAdapter().instantiateItem(mViewPager,4);
+                        chatFragment.reloadData();
                         break;
                 }
                 return false;

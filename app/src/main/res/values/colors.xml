@@ -54,6 +54,7 @@
     <color name="br_sl">#a9e5fd</color>
     <color name="txt_sl">#21b2e3</color>
     <color name="red">#FF0000</color>
+    <color name="Red">#FF0000</color>
     <color name="red_btn">#F83C3C</color>
     <color name="green">#08FF00</color>
     <color name="bg_time">#EFEBE7</color>
