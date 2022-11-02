@@ -32,25 +32,17 @@ public class DangKi extends AppCompatActivity {
         Dangki.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Methods methods = RetrofitClient.getRetrofit().create(Methods.class);
                 userModel temp = new userModel();
                 temp.setAccount(account.getText().toString());
                 temp.setPassword(password.getText().toString());
                 temp.setPhone(phone.getText().toString());
-                Call<userModel> call = methods.postUser(temp);
-                call.enqueue(new Callback<userModel>() {
-                    @Override
-                    public void onResponse(Call<userModel> call, Response<userModel> response) {
-
-                    }
-
-                    @Override
-                    public void onFailure(Call<userModel> call, Throwable t) {
-
-                    }
-                });
-
+                Intent intent = new Intent(DangKi.this,OTPCode.class);
+                intent.putExtra("key_1",temp.getAccount());
+                intent.putExtra("key_2",temp.getPassword());
+                intent.putExtra("key_3",temp.getPhone());
+                startActivity(intent);
             }
+
         });
     }
 

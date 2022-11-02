@@ -107,47 +107,6 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/linearSupplierName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="@dimen/dp5">
-
-                    <ImageView
-                        android:layout_width="@dimen/dp24"
-                        android:layout_height="@dimen/dp24"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="@dimen/margin_8dp"
-                        android:contentDescription="@string/default_image"
-                        android:src="@drawable/ic_mp_webview_home_light" />
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_supplier_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp48"
-                        android:layout_marginStart="@dimen/margin_8dp"
-                        android:background="@color/transparent"
-                        android:elevation="@dimen/dp5"
-                        android:hint="@string/enter_supplier_name"
-                        android:inputType="text"
-                        android:maxLength="10"
-                        android:maxLines="1"
-                        android:padding="@dimen/px4"
-                        android:textAllCaps="true"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/font_normal"
-                        android:textStyle="normal"
-
-                        />
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp1"
-                    android:background="@color/grey_bg" />
-
-                <LinearLayout
                     android:id="@+id/editUser"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -225,6 +184,13 @@
                             />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="đăng nhập">
+
+                </Button>
             </LinearLayout>
 
             <TextView
@@ -252,20 +218,13 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
-
-
-<!--                <Button-->
-<!--                    android:id="@+id/btnLogin"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginHorizontal="@dimen/dp48"-->
-<!--                    android:background="@drawable/bg_btn_orange"-->
-<!--                    android:backgroundTint="@color/main_bg"-->
-<!--                    android:text="@string/login"-->
-<!--                    android:textColor="@color/white"-->
-<!--                    android:textSize="@dimen/font_normal"-->
-<!--                    android:textStyle="normal"-->
-<!--                    app:lb_isCircular="true" />-->
+        <TextView
+            android:id="@+id/txtThongBao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            >
+        </TextView>
 
         <ImageButton
             android:id="@+id/btn_fingerprint"
