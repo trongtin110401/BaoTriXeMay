@@ -1275,5 +1275,6 @@
     <string name="user_name" translatable="false">Tài khoản</string>
     <string name="img_material" translatable="false">Hình ảnh</string>
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="title_activity_test1">test1</string>
 
 </resources>
