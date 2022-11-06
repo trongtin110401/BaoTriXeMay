@@ -2,9 +2,11 @@ package com.example.lib.Repository;
 
 import com.example.lib.model.ChatModel;
 import com.example.lib.model.Loaixe;
+import com.example.lib.model.MessageModel;
 import com.example.lib.model.otpModel;
 import com.example.lib.model.test;
 import com.example.lib.model.userModel;
+import com.example.lib.request.rqChat;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -25,9 +27,7 @@ public interface Methods {
     @GET("api/doanchat")
     Call<ChatModel[]> getGroudChat();
 
-//    @POST("api/doanchat")
-//    @FormUrlEncoded
-//    Call<ChatModel> login(@Field("username") String username,
-//                          @Field("password") String password);
+    @POST("api/chat")
+    Call<MessageModel[]> getChat(@Body rqChat data);
 
 }

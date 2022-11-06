@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.baotrixemay.Chat;
 import com.example.baotrixemay.R;
 import com.example.lib.model.ChatModel;
 
@@ -42,18 +43,16 @@ public class adapterGroupChat  extends
         Glide.with(mContext)
                 .load(hero.getAvatar())
                 .into(holder.mImageHero);
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(mContext, BT3.class);
-//                intent.putExtra("key_1",hero.getId());
-//                mContext.startActivity(intent);
-//
-//            }
-//        });
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, Chat.class);
+                intent.putExtra("key_1",hero.getIdcuahang());
+                intent.putExtra("key_2",hero.getUser_iduser());
+                mContext.startActivity(intent);
+            }
+        });
     }
-
     @Override
     public int getItemCount() {
         return mHeros.size();
