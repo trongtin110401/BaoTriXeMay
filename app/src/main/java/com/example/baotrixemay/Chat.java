@@ -24,6 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Chat extends AppCompatActivity {
+    String hieunganxauquat;
     RecyclerView recyclerView;
     adapterMessage adapterMessege1;
     int idcuahang,iduser;
