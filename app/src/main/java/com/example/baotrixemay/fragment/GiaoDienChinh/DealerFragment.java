@@ -2,20 +2,25 @@ package com.example.baotrixemay.fragment.GiaoDienChinh;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.baotrixemay.R;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 
 public class DealerFragment extends Fragment {
 
@@ -32,9 +37,31 @@ public class DealerFragment extends Fragment {
          */
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
+            LatLng sydney = new LatLng(10.855306113720097, 106.78530862439362);
             googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng suaxe = new LatLng(10.852928678047848, 106.7849842686559 );
+            googleMap.addMarker(new MarkerOptions().position(suaxe).title("Marker in Sydney"));
+            LatLng suaxe2 = new LatLng(10.852388820661798, 106.78659585615782);
+            googleMap.addMarker(new MarkerOptions().position(suaxe2).title("Marker in Sydney"));
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 18));
+
+
+
+            googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+            if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            googleMap.setMyLocationEnabled(true);
+//            googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+            googleMap.getUiSettings().setZoomControlsEnabled(true);
+
         }
     };
 
@@ -55,4 +82,5 @@ public class DealerFragment extends Fragment {
             mapFragment.getMapAsync(callback);
         }
     }
+
 }

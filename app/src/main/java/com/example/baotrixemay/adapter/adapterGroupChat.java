@@ -1,0 +1,72 @@
+package com.example.baotrixemay.adapter;
+
+import android.content.Context;
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.example.baotrixemay.R;
+import com.example.lib.model.ChatModel;
+
+import java.util.ArrayList;
+
+public class adapterGroupChat  extends
+        RecyclerView.Adapter<adapterGroupChat.ViewHolder>{
+    private Context mContext;
+    private ArrayList<ChatModel> mHeros;
+
+    public adapterGroupChat(Context mContext, ArrayList<ChatModel> mHeros) {
+        this.mContext = mContext;
+        this.mHeros = mHeros;
+    }
+    @NonNull
+    @Override
+    public adapterGroupChat.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View heroView = inflater.inflate(R.layout.itemchat, parent, false);
+        ViewHolder viewHolder = new ViewHolder(heroView);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull adapterGroupChat.ViewHolder holder, int position) {
+        ChatModel hero = mHeros.get(position);
+        holder.Name.setText(hero.getTencuahang());
+        Glide.with(mContext)
+                .load(hero.getAvatar())
+                .into(holder.mImageHero);
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(mContext, BT3.class);
+//                intent.putExtra("key_1",hero.getId());
+//                mContext.startActivity(intent);
+//
+//            }
+//        });
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return mHeros.size();
+    }
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private ImageView mImageHero;
+        private TextView Name;
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mImageHero = itemView.findViewById(R.id.imgUser);
+            Name = itemView.findViewById(R.id.Username);
+
+        }
+    }
+}
