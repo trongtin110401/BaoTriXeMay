@@ -20,7 +20,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class login extends AppCompatActivity {
-    Button btnLogin;
+    Button btnLogin,btnDK;
     EditText acc,pas;
     TextView thongbao;
     @Override
@@ -31,6 +31,14 @@ public class login extends AppCompatActivity {
         acc = findViewById(R.id.edtUsername);
         pas = findViewById(R.id.edtPassword);
         thongbao = findViewById(R.id.txtThongBao);
+        btnDK = findViewById(R.id.btnDK);
+        btnDK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(login.this,DangKi.class);
+                startActivity(intent);
+            }
+        });
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
