@@ -6,7 +6,7 @@ public class MessageModel {
     public int doanchat_iddoanchat;
     public int doanchat_cuahangsuachua_idcuahang;
     public int doanchat_user_iduser;
-    public int nguoigui;
+    public String nguoigui;
 
     public int getIdtinnhan() {
         return idtinnhan;
@@ -48,11 +48,11 @@ public class MessageModel {
         this.doanchat_user_iduser = doanchat_user_iduser;
     }
 
-    public int getNguoigui() {
+    public String getNguoigui() {
         return nguoigui;
     }
 
-    public void setNguoigui(int nguoigui) {
+    public void setNguoigui(String nguoigui) {
         this.nguoigui = nguoigui;
     }
 }

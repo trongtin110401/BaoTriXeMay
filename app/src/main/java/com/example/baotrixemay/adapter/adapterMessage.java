@@ -54,7 +54,7 @@ public class adapterMessage extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public int getItemViewType(int position) {
         MessageModel hero = mHeros.get(position);
-        if(hero.getNguoigui() == 8 ) return 1;
+        if(hero.getNguoigui().equals("cuahang") ) return 1;
         else return 2;
     }
     @Override

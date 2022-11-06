@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 
+import io.socket.client.IO;
+import io.socket.client.Socket;
 import com.example.baotrixemay.adapter.adapterMessage;
 import com.example.lib.Repository.Methods;
 import com.example.lib.Repository.RetrofitClient;
@@ -17,25 +20,45 @@ import com.example.lib.model.MessageModel;
 import com.example.lib.request.rqChat;
 import com.google.gson.Gson;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 
+import io.socket.client.IO;
+import io.socket.client.Socket;
+import io.socket.emitter.Emitter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Chat extends AppCompatActivity {
+    private Socket mSocket;
+    {
+        try {
+            mSocket = IO.socket("http://192.168.1.173:3000");
+        } catch (URISyntaxException e) {}
+    }
+    EditText editMessage;
+    ImageView imgSend;
     RecyclerView recyclerView;
     adapterMessage adapterMessege1;
+    ArrayList<MessageModel> temp1 = new ArrayList<>();
     int idcuahang,iduser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+        mSocket.connect();
+        mSocket.on("server-gui-tinnhan",listMembers);
         LinearLayoutManager layoutManager= new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         layoutManager.setReverseLayout(true);
         recyclerView = findViewById(R.id.listMS);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
+        editMessage = findViewById(R.id.editMessage);
+        imgSend = findViewById(R.id.imgSend);
         Intent intent = getIntent();
         idcuahang = intent.getIntExtra("key_1",-1);
         iduser = intent.getIntExtra("key_2",-1);
@@ -49,7 +72,6 @@ public class Chat extends AppCompatActivity {
             @Override
             public void onResponse(Call<MessageModel[]> call, Response<MessageModel[]> response) {
                 MessageModel[] data = response.body();
-                ArrayList<MessageModel> temp1 = new ArrayList<>();
                 for (MessageModel dt:data
                 ) {
                     Log.v("aaaaaaaaaaaaaaaaa",dt.getNoidung());
@@ -66,5 +88,39 @@ public class Chat extends AppCompatActivity {
 
             }
         });
+        mSocket.emit("client-gui-id", "user");
+        imgSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mSocket.emit("client-gui-tinnhan", editMessage.getText().toString());
+            }
+        });
     }
+    public Emitter.Listener listMembers = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String nguoigui;
+                    String tinnhan;
+                    try {
+                        nguoigui = data.getString("nguoigui");
+                        tinnhan = data.getString("tinnhan");
+                        MessageModel temp = new MessageModel();
+                        temp.setNguoigui(nguoigui);
+                        temp.setNoidung(tinnhan);
+                        temp1.add(0,temp);
+                        adapterMessege1.notifyDataSetChanged();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    // add the message to view
+                }
+            });
+        }
+    };
+
+
 }

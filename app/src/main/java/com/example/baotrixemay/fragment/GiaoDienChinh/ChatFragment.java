@@ -1,5 +1,6 @@
 package com.example.baotrixemay.fragment.GiaoDienChinh;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +16,8 @@ import com.example.baotrixemay.adapter.adapterGroupChat;
 import com.example.lib.Repository.Methods;
 import com.example.lib.Repository.RetrofitClient;
 import com.example.lib.model.ChatModel;
+import com.example.lib.model.GroupChatModel;
+import com.example.lib.request.RqGroupChat;
 
 import java.util.ArrayList;
 
@@ -40,14 +43,18 @@ public class ChatFragment extends Fragment {
         recyclerView =view.findViewById(R.id.listChat);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
+        Intent intent = getActivity().getIntent();
+        int id = intent.getIntExtra("id",-1);
         Methods methods = RetrofitClient.getRetrofit().create(Methods.class);
-        Call<ChatModel[]> call = methods.getGroudChat();
-        call.enqueue(new Callback<ChatModel[]>() {
+        RqGroupChat rqGroupChat = new RqGroupChat();
+        rqGroupChat.setIdcuahang(id);
+        Call<GroupChatModel[]> call = methods.getGroupChat(rqGroupChat);
+        call.enqueue(new Callback<GroupChatModel[]>() {
             @Override
-            public void onResponse(Call<ChatModel[]> call, Response<ChatModel[]> response) {
-                ChatModel[] dta = response.body();
-                ArrayList<ChatModel> temp = new ArrayList<>();
-                for (ChatModel dt:dta
+            public void onResponse(Call<GroupChatModel[]> call, Response<GroupChatModel[]> response) {
+                GroupChatModel[] dta = response.body();
+                ArrayList<GroupChatModel> temp = new ArrayList<>();
+                for (GroupChatModel dt:dta
                 ) {
                     temp.add(dt);
                     Log.v("............",dt.getAvatar());
@@ -58,7 +65,7 @@ public class ChatFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<ChatModel[]> call, Throwable t) {
+            public void onFailure(Call<GroupChatModel[]> call, Throwable t) {
 
             }
         });

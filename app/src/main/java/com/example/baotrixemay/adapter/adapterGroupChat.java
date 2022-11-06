@@ -15,15 +15,16 @@ import com.bumptech.glide.Glide;
 import com.example.baotrixemay.Chat;
 import com.example.baotrixemay.R;
 import com.example.lib.model.ChatModel;
+import com.example.lib.model.GroupChatModel;
 
 import java.util.ArrayList;
 
 public class adapterGroupChat  extends
         RecyclerView.Adapter<adapterGroupChat.ViewHolder>{
     private Context mContext;
-    private ArrayList<ChatModel> mHeros;
+    private ArrayList<GroupChatModel> mHeros;
 
-    public adapterGroupChat(Context mContext, ArrayList<ChatModel> mHeros) {
+    public adapterGroupChat(Context mContext, ArrayList<GroupChatModel> mHeros) {
         this.mContext = mContext;
         this.mHeros = mHeros;
     }
@@ -38,7 +39,7 @@ public class adapterGroupChat  extends
 
     @Override
     public void onBindViewHolder(@NonNull adapterGroupChat.ViewHolder holder, int position) {
-        ChatModel hero = mHeros.get(position);
+        GroupChatModel hero = mHeros.get(position);
         holder.Name.setText(hero.getTencuahang());
         Glide.with(mContext)
                 .load(hero.getAvatar())

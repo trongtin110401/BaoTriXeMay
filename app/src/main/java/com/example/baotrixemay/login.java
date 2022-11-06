@@ -48,16 +48,18 @@ public class login extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<userModel[]> call, Response<userModel[]> response) {
                         userModel[] data = response.body();
+                        int id = -1;
                         int count=0;
                         for (userModel dt:data
                              ) {
                             if(dt.account.equals(acc.getText().toString()) && dt.password.equals(pas.getText().toString())){
                                 count=1;
-
+                                id = dt.getIduser();
                             }
                         }
                         if(count==1){
                             Intent intent = new Intent(login.this,MainActivity.class);
+                            intent.putExtra("id",id);
                             startActivity(intent);
                         }else {
                             thongbao.setText("Tài khoản hoặc mật khẩu không chính xác");
