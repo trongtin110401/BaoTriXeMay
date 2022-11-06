@@ -38,11 +38,11 @@ public class DealerFragment extends Fragment {
         @Override
         public void onMapReady(GoogleMap googleMap) {
             LatLng sydney = new LatLng(10.855306113720097, 106.78530862439362);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
+            googleMap.addMarker(new MarkerOptions().position(sydney).title("Tiệm sửa xe 1"));
             LatLng suaxe = new LatLng(10.852928678047848, 106.7849842686559 );
-            googleMap.addMarker(new MarkerOptions().position(suaxe).title("Marker in Sydney"));
+            googleMap.addMarker(new MarkerOptions().position(suaxe).title("Tiệm sửa xe 2"));
             LatLng suaxe2 = new LatLng(10.852388820661798, 106.78659585615782);
-            googleMap.addMarker(new MarkerOptions().position(suaxe2).title("Marker in Sydney"));
+            googleMap.addMarker(new MarkerOptions().position(suaxe2).title("Tiệm sửa xe 3"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 18));
 
 
