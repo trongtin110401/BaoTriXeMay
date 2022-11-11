@@ -3,13 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
+    android:background="@drawable/backgrounddk"
     tools:context=".fragment.GiaoDienChinh.HomeFragment">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/txtTTXCN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông Tin Xe Cá Nhân"
+        android:textAlignment="center"
+        android:textSize="@dimen/dp30"
+        android:textColor="@color/black"
+        android:layout_alignParentTop="true"
+        >
+    </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Tab1" />
-
+        android:layout_above="@+id/add"
+        android:layout_below="@+id/txtTTXCN" />
+    <ImageButton
+        android:id="@+id/add"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/backgrounddk"
+        android:src="@drawable/add"
+        />
 </RelativeLayout>

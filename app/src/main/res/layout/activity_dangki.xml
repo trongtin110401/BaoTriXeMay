@@ -121,6 +121,7 @@
                         android:layout_marginRight="5dp"
                         android:layout_weight="0.4"
                         android:background="@drawable/button"
+                        app:backgroundTint="@null"
                         android:text="Đăng kí" />
 
                     <Button
@@ -129,6 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="0.4"
                         android:background="@drawable/button"
+                        app:backgroundTint="@null"
                         android:text="Trở về" />
                 </LinearLayout>
             </LinearLayout>
