@@ -4,10 +4,14 @@ import com.example.lib.model.ChatModel;
 import com.example.lib.model.GroupChatModel;
 import com.example.lib.model.Loaixe;
 import com.example.lib.model.MessageModel;
+import com.example.lib.model.PhieuLuuModel;
+import com.example.lib.model.XeCaNhanModel;
 import com.example.lib.model.otpModel;
 import com.example.lib.model.test;
 import com.example.lib.model.userModel;
 import com.example.lib.request.RqGroupChat;
+import com.example.lib.request.RqPhieuLuu;
+import com.example.lib.request.RqXeCaNhan;
 import com.example.lib.request.rqChat;
 
 import retrofit2.Call;
@@ -30,5 +34,9 @@ public interface Methods {
     Call<MessageModel[]> getChat(@Body rqChat data);
     @POST("api/doanchatuser")
     Call<GroupChatModel[]> getGroupChat(@Body RqGroupChat data);
+    @POST("api/xecanhan")
+    Call<XeCaNhanModel[]> getXeCaNhan(@Body RqXeCaNhan data);
+    @POST("api/phieuluu")
+    Call<PhieuLuuModel[]> getPhieuLuu(@Body RqPhieuLuu data);
 
 }
