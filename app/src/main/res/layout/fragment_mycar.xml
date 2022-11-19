@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgrounddk"
+    android:background="@drawable/bgsimple"
     tools:context=".fragment.GiaoDienChinh.HomeFragment">
     <TextView
         android:id="@+id/txtTTXCN"
@@ -30,6 +30,5 @@
         android:layout_height="60dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/backgrounddk"
         android:src="@drawable/add" />
 </RelativeLayout>

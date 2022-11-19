@@ -1,6 +1,7 @@
 package com.example.baotrixemay.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.baotrixemay.ChiTietPhieuLuu;
 import com.example.baotrixemay.R;
 import com.example.lib.model.PhieuLuuModel;
 import com.example.lib.model.XeCaNhanModel;
@@ -40,6 +42,14 @@ public class adapterLuuBT extends  RecyclerView.Adapter<adapterLuuBT.ViewHolder>
         PhieuLuuModel hero = mHeros.get(position);
         String ngay = "Ngày bảo trì: " + hero.getThoigian();
         holder.Name.setText(ngay);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, ChiTietPhieuLuu.class);
+                intent.putExtra("idphieuluu",hero.getIdphieuluu());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

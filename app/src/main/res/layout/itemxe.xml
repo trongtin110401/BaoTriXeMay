@@ -8,7 +8,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:textSize="@dimen/dp30"
+        android:textSize="@dimen/dp16"
+       android:textColor="@color/black"
         android:text="Wave"
         android:textStyle="bold"
         >

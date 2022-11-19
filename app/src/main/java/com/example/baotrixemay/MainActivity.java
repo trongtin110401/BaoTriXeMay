@@ -51,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         bottomNavigationView.getMenu().findItem(R.id.menu_tab2).setChecked(true);
                         break;
-                    case 2:
-                        bottomNavigationView.getMenu().findItem(R.id.menu_tab3).setChecked(true);
-                        break;
+//                    case 2:
+//                        bottomNavigationView.getMenu().findItem(R.id.menu_tab3).setChecked(true);
+//                        break;
                     case 3:
                         bottomNavigationView.getMenu().findItem(R.id.menu_tab4).setChecked(true);
                         break;
@@ -80,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_tab2:
                         mViewPager.setCurrentItem(1);
                         break;
-                    case R.id.menu_tab3:
-                        mViewPager.setCurrentItem(2);
-                        break;
+//                    case R.id.menu_tab3:
+//                        mViewPager.setCurrentItem(2);
+//                        break;
                     case R.id.menu_tab4:
                         mViewPager.setCurrentItem(3);
                         break;

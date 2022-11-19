@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/bg_login.xml" value="0.263" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/botron_spinner.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/click_menu_grey.xml" value="0.263" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/ic_account.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/ic_add.xml" value="0.1985" />
@@ -25,24 +26,30 @@
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/ic_search.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/ic_user.xml" value="0.263" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/information.xml" value="0.1595" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/shape_edit.xml" value="0.1595" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable-v24/tron.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/abc.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/add.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/backgrounddk.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/bg_btn_orange.xml" value="0.1985" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/botron_button.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/button.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1985" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/font/allura.xml" value="0.34010416666666665" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_add_car.xml" value="0.2947916666666667" />
-        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_chat.xml" value="0.3098958333333333" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_chat.xml" value="0.2988679352838745" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_chi_tiet_phieu_luu.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_dang_nhap.xml" value="0.2264151024877837" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_dangki.xml" value="0.3098958333333333" />
-        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_detail_car.xml" value="0.4528302049755674" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_dat_lich_bao_tri.xml" value="0.29583333333333334" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_detail_car.xml" value="0.19924529018924966" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_login.xml" value="0.2264151024877837" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_luu_thong_tin_bao_tri.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_main.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_otpcode.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_test1.xml" value="0.15070921985815602" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/activity_them_xe_moi.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/chitietxe.xml" value="0.2534188034188034" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/fragment_chat.xml" value="0.15" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/fragment_dealer.xml" value="0.15" />
@@ -52,8 +59,11 @@
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/fragment_product.xml" value="0.15" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/fragment_thong_tin_bao_tri.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/fragment_thong_tin_ky_thuat.xml" value="0.3098958333333333" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/item_cuahang.xml" value="0.30885416666666665" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/item_selected.xml" value="0.2988679352838745" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/itemchat.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/itemluuthongtin.xml" value="0.5358778625954198" />
+        <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/itemphutung.xml" value="0.3098958333333333" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/itemxe.xml" value="0.30885416666666665" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/login.xml" value="0.15" />
         <entry key="..\:/BaoTriXeMay/app/src/main/res/layout/mstxt.xml" value="0.2658514492753623" />

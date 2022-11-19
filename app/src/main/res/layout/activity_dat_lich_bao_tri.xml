@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bgsimple"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DatLichBaoTri">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/buttonDLH"
+            >
+            <LinearLayout
+                android:id="@+id/lyTop"
+                android:layout_width="match_parent"
+                android:padding="@dimen/dp8"
+                android:layout_height="wrap_content"
+                android:background="@color/orange"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="@dimen/dp20"
+                    android:layout_height="@dimen/dp20"
+                    android:layout_marginLeft="@dimen/dp10"
+                    android:layout_marginTop="4dp"
+                    app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp20"
+                    android:background="@color/orange"
+                    android:text="Đặt Lịch Bảo Trì"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dp20"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/lyTop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp10"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/abcde"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp250"
+                        app:layout_constraintEnd_toEndOf="@id/abcde"
+                        app:layout_constraintStart_toStartOf="@+id/abcde"
+                        app:layout_constraintTop_toTopOf="@+id/abcde"
+                        app:srcCompat="@drawable/hinhsuachua" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn Thông Tin"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp20"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn ngày bảo trì"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp16"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                    <EditText
+                        android:id="@+id/DTPicker"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_width="@dimen/dp200"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/botron_button"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:text=""
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+                    <Spinner
+                        android:id="@+id/spinnercuahang"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_width="@dimen/dp200"
+                        android:layout_height="@dimen/dp40"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn cửa hàng bảo trì"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp16"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/DTPicker" />
+
+                    <TextView
+                        android:id="@+id/textView22"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chọn các phụ tùng"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/dp16"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/spinnercuahang" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_marginTop="@dimen/dp5"
+                        android:id="@+id/listPTLichHen"
+                        android:layout_width="409dp"
+                        android:layout_height="248dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/spinnerPT" />
+
+                    <Spinner
+                        android:id="@+id/spinnerPT"
+                        android:layout_marginTop="@dimen/dp5"
+                        android:layout_width="@dimen/dp200"
+                        android:layout_height="@dimen/dp40"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+            </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/buttonDLH"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp15"
+        android:background="@drawable/button"
+        android:text="Đặt Lịch Hẹn"
+        android:textColor="@color/red"
+        android:textSize="8dp"
+        android:textStyle="bold"
+        app:backgroundTint="@null" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="@dimen/size_180"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp15"
+        android:background="@drawable/button"
+        android:text="Hủy"
+        android:textColor="@color/red"
+        android:textSize="@dimen/dp8"
+        android:textStyle="bold"
+        app:backgroundTint="@null" />
+</RelativeLayout>

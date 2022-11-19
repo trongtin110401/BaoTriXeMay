@@ -62,7 +62,7 @@ EditText maOTP;
                     call.enqueue(new Callback<userModel>() {
                         @Override
                         public void onResponse(Call<userModel> call, Response<userModel> response) {
-                            Intent intent = new Intent(OTPCode.this,MainActivity.class);
+                            Intent intent = new Intent(OTPCode.this,login.class);
                             startActivity(intent);
                         }
 

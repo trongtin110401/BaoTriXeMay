@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,6 +34,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class DetailCar extends AppCompatActivity {
+    Button btnDatLichHen,btnLuuBT;
     RecyclerView recyclerView;
     adapterLuuBT adtGroupChat;
     TextView txtDTTenXe,hangxe1;
@@ -42,6 +44,8 @@ public class DetailCar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_car);
+        btnDatLichHen = findViewById(R.id.btnDatLichHen);
+        btnLuuBT = findViewById(R.id.button);
         LinearLayoutManager layoutManager= new LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false);
         recyclerView =findViewById(R.id.listBaoTri);
         recyclerView.setHasFixedSize(true);
@@ -89,7 +93,19 @@ public class DetailCar extends AppCompatActivity {
 
             }
         });
-
-
+        btnDatLichHen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailCar.this,DatLichBaoTri.class);
+                startActivity(intent);
+            }
+        });
+        btnLuuBT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetailCar.this,LuuThongTinBaoTri.class);
+                startActivity(intent);
+            }
+        });
     }
 }

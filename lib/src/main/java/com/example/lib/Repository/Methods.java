@@ -1,16 +1,20 @@
 package com.example.lib.Repository;
 
 import com.example.lib.model.ChatModel;
+import com.example.lib.model.CuaHangModel;
 import com.example.lib.model.GroupChatModel;
 import com.example.lib.model.Loaixe;
 import com.example.lib.model.MessageModel;
 import com.example.lib.model.PhieuLuuModel;
+import com.example.lib.model.PhuTungModel;
 import com.example.lib.model.XeCaNhanModel;
 import com.example.lib.model.otpModel;
+import com.example.lib.model.reponsethemxe;
 import com.example.lib.model.test;
 import com.example.lib.model.userModel;
 import com.example.lib.request.RqGroupChat;
 import com.example.lib.request.RqPhieuLuu;
+import com.example.lib.request.RqThemXe;
 import com.example.lib.request.RqXeCaNhan;
 import com.example.lib.request.rqChat;
 
@@ -38,5 +42,13 @@ public interface Methods {
     Call<XeCaNhanModel[]> getXeCaNhan(@Body RqXeCaNhan data);
     @POST("api/phieuluu")
     Call<PhieuLuuModel[]> getPhieuLuu(@Body RqPhieuLuu data);
+    @GET("api/cuahang")
+    Call<CuaHangModel[]> getCuaHang();
+    @GET("api/phutung")
+    Call<PhuTungModel[]> getPhuTung();
+    @GET("api/loaixe")
+    Call<Loaixe[]> getLoaiXe();
+    @POST("api/xecanhan1")
+    Call<reponsethemxe[]> ThemXe(@Body RqThemXe data);
 
 }

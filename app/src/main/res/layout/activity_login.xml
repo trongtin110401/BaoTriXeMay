@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bgsimple"
+
     android:layout_height="match_parent"
     tools:context=".login">
 
@@ -11,7 +13,6 @@
         android:id="@+id/constrainLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
         android:gravity="center|top"
         android:orientation="vertical"
         app:layoutDescription="@xml/fragment_login_scene"
@@ -21,7 +22,6 @@
             android:id="@+id/rlHeader"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp48"
-            android:background="@color/white_30"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -81,7 +81,7 @@
                     android:layout_margin="@dimen/margin_8dp"
                     android:layout_marginEnd="@dimen/dp24"
                     android:contentDescription="@string/default_image"
-                    android:src="@drawable/logo_techres_slogan" />
+                    android:src="@drawable/honda" />
             </LinearLayout>
         </LinearLayout>
 
