@@ -104,6 +104,7 @@ public class DetailCar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(DetailCar.this,LuuThongTinBaoTri.class);
+                intent.putExtra("iduser",idxe);
                 startActivity(intent);
             }
         });

@@ -13,6 +13,7 @@ import com.example.lib.model.reponsethemxe;
 import com.example.lib.model.test;
 import com.example.lib.model.userModel;
 import com.example.lib.request.RqGroupChat;
+import com.example.lib.request.RqLuuBT;
 import com.example.lib.request.RqPhieuLuu;
 import com.example.lib.request.RqThemXe;
 import com.example.lib.request.RqXeCaNhan;
@@ -50,5 +51,7 @@ public interface Methods {
     Call<Loaixe[]> getLoaiXe();
     @POST("api/xecanhan1")
     Call<reponsethemxe[]> ThemXe(@Body RqThemXe data);
+    @POST("api/themphieuluu")
+    Call<otpModel> themPhieuLuu(@Body RqLuuBT data);
 
 }

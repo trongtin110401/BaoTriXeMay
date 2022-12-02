@@ -8,6 +8,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -24,10 +25,16 @@ import com.example.lib.Repository.RetrofitClient;
 import com.example.lib.model.CuaHangModel;
 import com.example.lib.model.PhieuLuuModel;
 import com.example.lib.model.PhuTungModel;
+import com.example.lib.model.otpModel;
+import com.example.lib.model.reponsethemxe;
+import com.example.lib.request.RqLuuBT;
 import com.example.lib.request.RqPhieuLuu;
+import com.example.lib.request.idphutung;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -43,10 +50,14 @@ public class LuuThongTinBaoTri extends AppCompatActivity {
     adaperPhuTung1 adapterPT1;
     ArrayList<PhuTungModel> listPT = new ArrayList<>();
     DatePickerDialog picker;
+    ArrayList<PhuTungModel> temp= new ArrayList<>();
+    public ArrayList<idphutung> listdata = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luu_thong_tin_bao_tri);
+        Intent intent = getIntent();
+        int idxe = intent.getIntExtra("iduser",-1);
         btnLBT = findViewById(R.id.buttonLBT);
         DTPicker =  findViewById(R.id.DTPicker);
         DTPicker.setInputType(InputType.TYPE_NULL);
@@ -84,13 +95,13 @@ public class LuuThongTinBaoTri extends AppCompatActivity {
             @Override
             public void onResponse(Call<CuaHangModel[]> call, Response<CuaHangModel[]> response) {
                 CuaHangModel[] data=response.body();
-                ArrayList<CuaHangModel> temp= new ArrayList<>();
+                ArrayList<CuaHangModel> temp1= new ArrayList<>();
                 for (CuaHangModel dt:data
                 ) {
-                    temp.add(dt);
+                    temp1.add(dt);
                 }
 
-                adapterCH = new adapterCuaHang(LuuThongTinBaoTri.this,R.layout.item_selected,temp);
+                adapterCH = new adapterCuaHang(LuuThongTinBaoTri.this,R.layout.item_selected,temp1);
                 spinnerCH.setAdapter(adapterCH);
             }
 
@@ -104,13 +115,14 @@ public class LuuThongTinBaoTri extends AppCompatActivity {
             @Override
             public void onResponse(Call<PhuTungModel[]> call, Response<PhuTungModel[]> response) {
                 PhuTungModel[] data=response.body();
-                ArrayList<PhuTungModel> temp= new ArrayList<>();
+
                 for (PhuTungModel dt:data
                 ) {
                     temp.add(dt);
                 }
 
                 adapterPT = new adapterPhuTung(LuuThongTinBaoTri.this,R.layout.item_selected,temp);
+
                 spinnerPT.setAdapter(adapterPT);
             }
 
@@ -125,9 +137,17 @@ public class LuuThongTinBaoTri extends AppCompatActivity {
 //                Toast.makeText(DatLichBaoTri.this,adapterPT.getItem(i).getTenphutung(),Toast.LENGTH_LONG).show();
                 listPT.add(0,adapterPT.getItem(i));
                 for (PhuTungModel pt:listPT
-                ) {
-                    Toast.makeText(LuuThongTinBaoTri.this,pt.getTenphutung(),Toast.LENGTH_LONG).show();
+                     ) {
+                    for (PhuTungModel ptlist:temp
+                         ) {
+                        if(pt.getTenphutung().equals(ptlist.getTenphutung())){
+                            idphutung idtemp = new idphutung();
+                            idtemp.setPhutungxe_idphutungxe(ptlist.getIdphutungxe());
+                            listdata.add(0,idtemp);
+                        }
+                    }
                 }
+
                 adapterPT1.notifyDataSetChanged();
             }
 
@@ -139,9 +159,26 @@ public class LuuThongTinBaoTri extends AppCompatActivity {
         btnLBT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LuuThongTinBaoTri.this,MainActivity.class);
-                intent.putExtra("id",1);
-                startActivity(intent);
+                Methods methods1 = RetrofitClient.getRetrofit().create(Methods.class);;
+                RqLuuBT rqLuuBT = new RqLuuBT();
+                rqLuuBT.setListdata(listdata);
+                rqLuuBT.setIdcuahang(1);
+                rqLuuBT.setIdxe(idxe);
+                rqLuuBT.setThoigian(DTPicker.getText().toString());
+                Call<otpModel> call2 = methods1.themPhieuLuu(rqLuuBT);
+                Log.v(".....",new Gson().toJson(rqLuuBT));
+                call2.enqueue(new Callback<otpModel>() {
+                    @Override
+                    public void onResponse(Call<otpModel> call, Response<otpModel> response) {
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<otpModel> call, Throwable t) {
+
+                    }
+                });
+
             }
         });
     }
