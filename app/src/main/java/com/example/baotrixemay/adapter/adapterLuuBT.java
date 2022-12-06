@@ -46,7 +46,7 @@ public class adapterLuuBT extends  RecyclerView.Adapter<adapterLuuBT.ViewHolder>
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, ChiTietPhieuLuu.class);
-                intent.putExtra("idphieuluu",hero.getIdphieuluu());
+                intent.putExtra("idphieuluu",hero.getIdthongtinbaotrixe());
                 mContext.startActivity(intent);
             }
         });

@@ -57,7 +57,12 @@ public class LuuThongTinBaoTri extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_luu_thong_tin_bao_tri);
         Intent intent = getIntent();
-        int idxe = intent.getIntExtra("iduser",-1);
+        int iduser = intent.getIntExtra("key_0",-1);
+        int idxe = intent.getIntExtra("key_1",-1);
+        String imgxe = intent.getStringExtra("key_2");
+        String imglogo = intent.getStringExtra("key_3");
+        String tenxe = intent.getStringExtra("key_4");
+        String hangxe = intent.getStringExtra("key_5");
         btnLBT = findViewById(R.id.buttonLBT);
         DTPicker =  findViewById(R.id.DTPicker);
         DTPicker.setInputType(InputType.TYPE_NULL);
@@ -170,7 +175,14 @@ public class LuuThongTinBaoTri extends AppCompatActivity {
                 call2.enqueue(new Callback<otpModel>() {
                     @Override
                     public void onResponse(Call<otpModel> call, Response<otpModel> response) {
-
+                        Intent intent = new Intent(LuuThongTinBaoTri.this,DetailCar.class);
+                        intent.putExtra("key_1",idxe);
+                        intent.putExtra("key_0",iduser);
+                        intent.putExtra("key_2",imgxe);
+                        intent.putExtra("key_3",imglogo);
+                        intent.putExtra("key_4",tenxe);
+                        intent.putExtra("key_5",hangxe);
+                        startActivity(intent);
                     }
 
                     @Override

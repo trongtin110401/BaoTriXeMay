@@ -43,6 +43,8 @@ public interface Methods {
     Call<XeCaNhanModel[]> getXeCaNhan(@Body RqXeCaNhan data);
     @POST("api/phieuluu")
     Call<PhieuLuuModel[]> getPhieuLuu(@Body RqPhieuLuu data);
+    @POST("api/chitietphieuluu")
+    Call<PhieuLuuModel[]> chitietphieuluu(@Body PhieuLuuModel data);
     @GET("api/cuahang")
     Call<CuaHangModel[]> getCuaHang();
     @GET("api/phutung")

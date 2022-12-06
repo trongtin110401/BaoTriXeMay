@@ -43,6 +43,8 @@ public class DealerFragment extends Fragment {
             googleMap.addMarker(new MarkerOptions().position(suaxe).title("Tiệm sửa xe 2"));
             LatLng suaxe2 = new LatLng(10.852388820661798, 106.78659585615782);
             googleMap.addMarker(new MarkerOptions().position(suaxe2).title("Tiệm sửa xe 3"));
+            LatLng suaxe3 = new LatLng(10.784297274000979, 106.76917605391316);
+            googleMap.addMarker(new MarkerOptions().position(suaxe3).title("Tiệm sửa xe 4"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 18));
 
 
